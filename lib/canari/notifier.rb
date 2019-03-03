@@ -14,7 +14,7 @@ module Canari
           body 'A new certificate has been emitted matching: ' \
                "#{matching.join(', ')}. See the attached file for details."
           add_file filename: 'certificate.json',
-                   content: JSON.pretty_print(payload)
+                   content: JSON.pretty_generate(payload)
         end.deliver
       end
     end
