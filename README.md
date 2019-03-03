@@ -4,7 +4,7 @@ A gem to monitor TLS certificates using Cert Stream
 
 ## Installation
 
-Install the gem (deployment to Rubygems coming soon) :
+Install the gem :
 
 ```ruby
 gem install canari
