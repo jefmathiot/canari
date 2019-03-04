@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    canari (0.1.0)
+    canari (0.2.0)
       dalli (~> 2.7)
       eventmachine (~> 1.2)
       mail (~> 2.7)

@@ -18,18 +18,18 @@ module Canari
     def start
       Canari.load_config(options[:config])
       DomainCache.preload(options[:domains])
-      run(URI.parse('wss://certstream.calidog.io'))
+      Canari.run(URI.parse('wss://certstream.calidog.io'))
       loop do
         sleep 1
       end
     end
+  end
 
-    def run(uri)
-      EM.run do
-        EM.connect(uri.host, 443, CertStream) do |stream|
-          stream.url = uri.to_s
-          stream.start_tls(sni_hostname: uri.host)
-        end
+  def self.run(uri)
+    EM.run do
+      EM.connect(uri.host, 443, CertStream) do |stream|
+        stream.url = uri.to_s
+        stream.start_tls(sni_hostname: uri.host)
       end
     end
   end

@@ -36,7 +36,7 @@ module Canari
     end
 
     def attach_listeners
-      @driver.on(:open)    { |_event| Canari.logger.info 'Connection opened' }
+      @driver.on(:open)    { |_event| Canari.logger.info 'Connection open' }
       @driver.on(:message) do |event|
         handle_message(event.data)
       end
